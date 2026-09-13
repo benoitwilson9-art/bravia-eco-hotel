@@ -1,0 +1,12 @@
+# Backend Laravel
+backend/vendor/
+backend/.env
+backend/node_modules/
+
+# Frontend React
+frontend/node_modules/
+frontend/dist/
+
+# Système
+.DS_Store
+*.log

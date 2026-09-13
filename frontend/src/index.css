@@ -1,0 +1,139 @@
+:root {
+  --cream: #F7F4EF;
+  --cream-2: #EFEAE1;
+  --expresso: #2A211B;
+  --bordeaux: #8B1E1E;
+  --bordeaux-2: #6E1717;
+  --gold: #C9A227;
+  --taupe: #6E6A63;
+  --glass-bg: rgba(247, 244, 239, 0.55);
+  --glass-bg-dark: rgba(42, 33, 27, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.5);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--expresso);
+  font-family: 'Public Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+p { line-height: 1.65; color: var(--taupe); margin: 0; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+
+/* Boutons glassmorphism */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  background: linear-gradient(180deg, rgba(139,30,30,0.85), rgba(110,23,23,0.85));
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(139,30,30,0.28);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.5);
+  color: var(--expresso);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), 0 4px 16px rgba(42,33,27,0.08);
+}
+.btn-ghost-dark {
+  background: rgba(255,255,255,0.08);
+  color: #F7F4EF;
+  border-color: rgba(255,255,255,0.28);
+}
+.btn-small { padding: 9px 18px; font-size: 13px; }
+
+/* Cartes chambres */
+.room-card {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(42,33,27,0.08);
+  border: 1px solid rgba(42,33,27,0.06);
+}
+.room-card .photo { position: relative; height: 220px; overflow: hidden; }
+.room-card .photo img { width: 100%; height: 100%; object-fit: cover; }
+.room-card .room-body { padding: 22px; }
+.room-card h3 { font-size: 20px; margin-bottom: 6px; }
+.room-card .price { color: var(--bordeaux); font-weight: 600; font-size: 14px; margin-bottom: 12px; }
+.room-card p { font-size: 14px; margin-bottom: 18px; }
+
+/* Badges de statut */
+.status-badge {
+  position: absolute; top: 14px; left: 14px;
+  padding: 6px 14px; border-radius: 999px; font-size: 12px; font-weight: 600;
+  background: var(--glass-bg); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+}
+.status-badge.free { color: #2E5A3E; }
+.status-badge.busy { color: var(--bordeaux); }
+
+/* Sections */
+.section { padding: 88px 0; }
+.section-head { max-width: 560px; margin-bottom: 40px; }
+.section-head h2 { font-size: 32px; margin-bottom: 12px; }
+.section-head.light h2 { color: #fff; }
+.section-head.light p { color: #D8D2C6; }
+
+.section-dark { background: var(--expresso); }
+
+.card-row { display: flex; flex-wrap: wrap; gap: 24px; }
+
+/* Amenities */
+.amenity { flex: 1 1 300px; border-radius: 18px; overflow: hidden; position: relative; height: 260px; }
+.amenity img { width: 100%; height: 100%; object-fit: cover; }
+.amenity .cap {
+  position: absolute; left: 14px; right: 14px; bottom: 14px;
+  background: var(--glass-bg-dark); border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(14px); border-radius: 14px; padding: 12px 16px;
+}
+.amenity .cap h4 { color: #fff; font-family: 'Fraunces', serif; font-size: 16px; margin-bottom: 2px; }
+.amenity .cap span { color: #C9BEB0; font-size: 12.5px; }
+
+/* Bandeau CTA */
+.cta-band {
+  max-width: 1180px; margin: 40px auto; background: linear-gradient(120deg, var(--bordeaux-2), var(--bordeaux));
+  border-radius: 28px; padding: 48px; display: flex; flex-wrap: wrap; gap: 24px;
+  align-items: center; justify-content: space-between;
+  box-shadow: 0 24px 50px rgba(139,30,30,0.25);
+}
+.cta-band h2 { color: #fff; font-size: 26px; max-width: 420px; }
+.cta-band p { color: #EBD9D0; margin-top: 8px; font-size: 14px; }
+
+/* Formulaires */
+.form-card {
+  background: #fff; padding: 36px; border-radius: 20px; width: 100%; max-width: 400px;
+  box-shadow: 0 10px 30px rgba(42,33,27,0.08);
+}
+.form-card label { display: block; font-size: 13px; margin-bottom: 6px; }
+.form-card input, .form-card select, .form-card textarea {
+  width: 100%; padding: 10px; border-radius: 8px; margin-bottom: 16px;
+  border: 1px solid #ddd; font-family: inherit; font-size: 14px;
+}
